@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Equal to the full height of the viewport or the browser window */
+    margin: 0;
+    background: linear-gradient(to bottom right, #f0f0f0, #ddd);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+    border: 2px solid #aaa;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* For transition */
+.cell:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+}
+
+/* CSS selectors to specify colors and shadows for X and O */
+.cell[data-content='X'] {
+    color: #2196F3;
+    text-shadow: 0 0 5px #2196F3;
+}
+
+.cell[data-content='O'] {
+    color: #209ea2;
+    text-shadow: 0 0 5px #F44336;
+}
